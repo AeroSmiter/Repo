@@ -12,6 +12,8 @@ window.onload = function aFnctn(){
     var question = document.getElementById("question"); 
     var zdjecie = document.getElementById("image");
     var okno = document.getElementById("window");
+    var answer = document.getElementById("answer");
+    var nice = document.getElementById("nice");
    
     
     question.innerHTML = ("Wprowadź kod soczewki:");
@@ -33,25 +35,41 @@ window.onload = function aFnctn(){
             "1RT375M85",
             "1RM475M85",);
  
-    
     var l = imagesArray.length;
     
-    buttonNext.onclick = function(n){
-        n.preventDefault();
+    buttonNext.onclick = function(){
         var randomNumber = Math.floor(l*Math.random());
-        document.getElementById("zdjecie").src = "images/" + imagesArray[randomNumber] + ".jpg";  
+        document.getElementById("zdjecie").src = "images/" + imagesArray[randomNumber] + ".jpg";
+        nice.innerHTML = "";
+      
     };
     
       
-    buttonResult.onclick = function(r){
-       r.preventDefault(); 
-       var answer = document.getElementById("answer");
-       var result = okno.value;
-       var actualImage = document.getElementById("zdjecie").src;
-            if (!result === (actualImage)){
+    buttonResult.onclick = function(){
+       var result = okno.value.toUpperCase();
+       var actualImage = document.getElementById("zdjecie").attributes["src"].nodeValue;
+       var actualestImage = actualImage.replace(".jpg","").replace("images/","").toUpperCase();
+       
+            if ((result == (actualestImage))){
                 
-               answer.innerHTML = ("Niepoprawny kod soczewki./n Postaraj się");
+               answer.innerHTML = "";
+               okno.value = "";
+               nice.innerHTML = "POPRAWNA ODPOWIEDŹ :)";
+                
+               setTimeout(function(){ buttonNext.onclick(); }, 1000);
+                
+           }
+            else{
+               answer.innerHTML = "Niepoprawny kod soczewki. Postaraj się";
+            }   
+        
         };
+        
+    buttonClear.onclick = function(){
+        nice.innerHTML = "";
+        answer.innerHTML = "";
+        okno.value = ""; 
+    };
        
        
         
@@ -59,7 +77,7 @@ window.onload = function aFnctn(){
     
    
 
-};
+
   
 
      
