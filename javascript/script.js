@@ -17,35 +17,31 @@ window.onload = function aFnctn(){
     
     /*Tablica*/
     var imagesArray = new Array(
-            "images/R300P87.jpg", 
-            "images/R225M83.jpg", 
-            "images/R150M87.jpg", 
-            "images/24RT475P88.jpg",
-            "images/24RT300M88.jpg",
-            "images/24RT125P88.jpg",
-            "images/24RT110M84.jpg",
-            "images/12RT550P88.jpg",
-            "images/12RT475P88.jpg",
-            "images/12RT200M88.jpg",
-            "images/12RT150M88.jpg",
-            "images/1RT700M90.jpg",
-            "images/1RT375M85.jpg",
-            "images/1RM475M85.jpg",);
-            
-    var kotZnozem = imagesArray[0];
-    var kotIkamera = imagesArray[1];
-    var selfieZpsami = imagesArray[2];
-    var wzialesWoreczki = imagesArray[3];
-    var chomik = imagesArray[4];
+            "R300P87", 
+            "R225M83", 
+            "R150M87", 
+            "24RT475P88",
+            "24RT300M88",
+            "24RT125P88",
+            "24RT110M84",
+            "12RT550P88",
+            "12RT475P88",
+            "12RT200M88",
+            "12RT150M88",
+            "1RT700M90",
+            "1RT375M85",
+            "1RM475M85",);
+ 
     
     var l = imagesArray.length;
     
     buttonNext.onclick = function(n){
         n.preventDefault();
         var randomNumber = Math.floor(l*Math.random());
-        document.getElementById("image").src = imagesArray[randomNumber];  
+        document.getElementById("image").src = "images/" + imagesArray[randomNumber] + ".jpg";  
     };
     
+      
     buttonResult.onclick = function(r){
        r.preventDefault(); 
        
