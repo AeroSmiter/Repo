@@ -5,20 +5,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css"/>
-        <script src="javascript/script.js" async></script>  
+        <script src="javascript/script.js"></script>  
     </head>
     
     <body> 
         
       <form>
-        <div id="infoResult" style="display:display"><img src="images/kp1.jpg" alt=""></div>
-        
-        <div id="questionRadio"></div>
+        <div style="display:display"><img id="image" src="images/12RT150M88.jpg" width="640" height="480" alt=""></div>
+  
+        <div id="question"></div> <div id="badAnswer"></div>
+        <input type="text" id="window"><div>
+
         
         <input class = "buttonNp" type="button" value="Następne pytanie" id="buttonNext">
         <input class = "buttonSw" type="button" value="Sprawdź wynik" id="buttonResult">
         <input class = "buttonOn" type="button" value="Kliknij aby rozpocząć od nowa" id="buttonClear">
       </form>
+        
+        <div id="infoResult"></div>
 
     </body>
 </html>
