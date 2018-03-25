@@ -10,8 +10,9 @@ window.onload = function aFnctn(){
     
     /*Div-s*/
     var question = document.getElementById("question"); 
-    var image = document.getElementById("image");
-    var window = document.getElementById("window");
+    var zdjecie = document.getElementById("image");
+    var okno = document.getElementById("window");
+   
     
     question.innerHTML = ("Wprowadź kod soczewki:");
     
@@ -38,12 +39,19 @@ window.onload = function aFnctn(){
     buttonNext.onclick = function(n){
         n.preventDefault();
         var randomNumber = Math.floor(l*Math.random());
-        document.getElementById("image").src = "images/" + imagesArray[randomNumber] + ".jpg";  
+        document.getElementById("zdjecie").src = "images/" + imagesArray[randomNumber] + ".jpg";  
     };
     
       
     buttonResult.onclick = function(r){
        r.preventDefault(); 
+       var answer = document.getElementById("answer");
+       var result = okno.value;
+       var actualImage = document.getElementById("zdjecie").src;
+            if (!result === (actualImage)){
+                
+               answer.innerHTML = ("Niepoprawny kod soczewki./n Postaraj się");
+        };
        
        
         
